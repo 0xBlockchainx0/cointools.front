@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^3.4.2",
+    "@tailwindcss/postcss7-compat": "^2.0.3",
     "autoprefixer": "^9",
     "node-sass": "^5.0.0",
     "postcss": "^7",
