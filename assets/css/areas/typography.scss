@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+:root {
+  // Typography
+  --heading-line-height: 150%;
+  --header-letter-spacing: -50%;
+  --font-weight-header: normal;
+  --header-margin: 10px;
+
+  --body-line-height: 167.52%;
+  --body-letter-spacing: 0;
+  --font-weight-text: 400;
+  --font-weight-nav: 400;
+
+  // Typography sizes
+  --text-h1: 37px;
+  --text-h2: 31px;
+  --text-h3: 22px;
+  --text-h4: 18px;
+  --text-h5: 16px;
+  --text-h6: 15px;
+  --text-nav: 15px;
+  --text-body: 15px;
+  --text-small: 12px;
+
+  // Weights
+
+  // Btn Icon Size
+  --btn-icon-size: 20px;
+}
+
+@screen md {
+  :root {
+    // Typography sizes
+    --text-h1: 51px;
+    --text-h2: 38px;
+    --text-h3: 25px;
+    --text-h4: 20px;
+    --text-h5: 18px;
+  }
+}
+
+body {
+  @apply text-body;
+  color: var(--color-body);
+  letter-spacing:var(--body-letter-spacing);
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, form legend {
+  line-height: var(--heading-line-height);
+  font-weight: var(--font-weight-header);
+  letter-spacing: var(--header-letter-spacing);
+  color: var(--color-header);
+  margin-bottom: var(--header-margin);
+  @include fontSmooth;
+  @apply font-brand;
+}
+
+p {
+  @include fontSmooth;
+  @apply font-body;
+  color: var(--color-body);
+  + h1, + h2, + h3, + h4{
+    //@apply mt-md;
+  }
+}
+
+p, small, div, li, b {
+  color: var(--color-body);
+  line-height: var(--body-line-height);
+  font-weight: var(--font-weight-text);
+}
+
+svg {
+  //height: var(--btn-icon-size);
+  .icon & {
+    height:calc(var(--btn-icon-size) * 2);
+  }
+  .icon.md & {
+    height:calc(var(--btn-icon-size) * 1.3);
+  }
+  .icon.lg & {
+    height:calc(var(--btn-icon-size) * 3);
+  }
+  .icon.sm & {
+    height:calc(var(--btn-icon-size) * 1);
+  }
+  .icon.xs & {
+    height:calc(var(--btn-icon-size) * 0.5);
+  }
+  //path {
+  //  fill: currentColor;
+  //}
+}
+
+/* text size */
+.head {
+  font-size: calc(var(--text-h1) * 1.5);
+}
+
+h1, .h1 {
+  @apply text-h1;
+}
+
+h2, .h2 {
+  @apply text-h2;
+}
+
+h3, .h3 {
+  @apply text-h3 font-medium font-brand;
+}
+
+h4, .h4 {
+  @apply text-h4 font-semibold font-brand;
+}
+
+h5, .h5 {
+  @apply text-h5 font-medium font-brand;
+}
+h6, .h6 {
+  @apply text-h6 font-semibold font-brand;
+}
+
+b {
+  @apply font-brand font-semibold;
+}
+
+small {
+  @apply text-small;
+}
+
+p, .p {
+  @apply text-body;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &.sm {
+    font-size: calc(var(--text-body) / 1.3);
+  }
+  &.xs {
+    font-size: calc(var(--text-body) / 1.6);
+  }
+}
+
+hr {
+  //@apply my-sm;
+  border-color: var(--color-border);
+}
+
+a {
+  color: var(--color-link);
+  &:hover {
+    color: var(--color-link-hover);
+  }
+}
+
+article, pre, address, blockquote {
+  margin: var(--space-lg) 0;
+  padding: var(--space) var(--space);
+}
+
+address, pre {
+  @apply text-body;
+}
+
+pre {
+  overflow: scroll;
+}
+
+ul {
+  padding: 0 0 var(--space) 0;
+  li {
+    @apply list-disc list-inside;
+    margin-top: var(--space-xs);
+  }
+}
+ol {
+  padding: 0 0 var(--space) var(--space-md);
+  li {
+    @apply list-decimal list-inside;
+    margin-top: var(--space-xs);
+  }
+}
+
+.line {
+  @apply relative;
+  &:before {
+    content: '';
+    @apply rounded bg-current absolute top-1/2;
+    transform: translate(-175%, -50%);
+    width:12px;
+    height:2px;
+
+  }
+}

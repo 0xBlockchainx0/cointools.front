@@ -1,0 +1,11 @@
+@mixin fontSmooth {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin t1($time: .3s, $el: all, $ease: cubic-bezier(.17,.67,.83,.67)) {
+  transition: $el $time $ease;
+}
+.t1 {
+  @include t1;
+}

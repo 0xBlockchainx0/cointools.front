@@ -1,0 +1,99 @@
+:root {
+  --btn-font-size: 15px;
+  --btn-sm: calc(var(--btn-font-size) - 0.1em);
+  --btn-md: calc(var(--btn-font-size) + 0.2em);
+  --btn-lg: calc(var(--btn-font-size) + 0.4em);
+  --btn-radius: 9999px;
+  --btn-icon-size: 0.75em;
+}
+
+.btn {
+  padding: 4px 19px;
+  display: inline-block;
+  border-radius: var(--btn-radius);
+  font-size: var(--btn-font-size);
+  color: var(--color-text);
+  @apply items-center flex-shrink-0 font-medium;
+  @include fontSmooth;
+
+  &:hover {
+    @apply bg-light;
+  }
+
+  &.with-icon {
+    display: inline-flex;
+    align-items: center;
+    > *:nth-child(2) {
+      margin-left: var(--space-xs);
+    }
+  }
+
+  &:active {
+    transition: none;
+  }
+
+  .icon {
+    /* icon inherits color of button label */
+    color: inherit;
+    flex-shrink: 0;
+    svg {
+      height:var(--btn-icon-size);
+      path {
+        fill: currentColor;
+      }
+    }
+  }
+
+  /* button size */
+  &.sm {
+    font-size: var(--btn-sm);
+  }
+
+  &.md {
+    font-size: var(--btn-md);
+  }
+
+  &.lg {
+    font-size: var(--btn-lg);
+  }
+
+  &.full-width {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* themes */
+.btn-primary {
+  // main button
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-label);
+  @include fontSmooth;
+
+  &:visited {
+    color: var(--btn-primary-label);
+  }
+
+  &:hover {
+    background-color: var(--btn-primary-hover);
+    color: var(--btn-primary-label);
+  }
+
+  &:active {
+    background-color: var(--btn-primary-active);
+  }
+}
+
+/* feedback */
+.btn[disabled] {
+  cursor: not-allowed;
+  background-color: var(--btn-disabled-bg);
+  color: var(--btn-disabled-label);
+  box-shadow: none;
+  opacity: 0.6;
+
+  &:visited {
+    color: var(--btn-disabled-label);
+  }
+}
