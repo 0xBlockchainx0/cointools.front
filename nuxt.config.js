@@ -24,7 +24,7 @@ export default {
   components: true,
 
   buildModules: [
-    // '@nuxtjs/tailwindcss',
+    '@nuxtjs/tailwindcss',
   ],
 
   modules: [
