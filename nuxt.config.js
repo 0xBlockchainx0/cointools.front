@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 export default {
   head: {
     title: 'CoinTools',
@@ -13,7 +15,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     script: [
-      { src: 'https://apis.google.com/js/platform.js', defer: true }
+      // { src: 'https://apis.google.com/js/platform.js', defer: true }
     ]
   },
 
@@ -23,7 +25,7 @@ export default {
 
   plugins: [
   ],
-
+  devtools: true,
   components: true,
 
   buildModules: [
@@ -31,18 +33,21 @@ export default {
   ],
 
   modules: [
-    '@nuxtjs/axios',
-    '@nuxtjs/auth-next'
+    // '@nuxtjs/axios',
+    // '@nuxtjs/auth-next'
   ],
 
-  auth: {
-    strategies: {
-      google: {
-        clientId: '129126858856-ihk1rglu1mkb0bilmj0so9g04umg5tqv.apps.googleusercontent.com',
-        clientSecret: 'yBn3qZURVzeS5PiiuAFY-LO6'
-      },
-    }
-  },
+  // auth: {
+  //   strategies: {
+  //     local: {
+  //     },
+  //     google: {
+  //       clientId: '129126858856-ihk1rglu1mkb0bilmj0so9g04umg5tqv.apps.googleusercontent.com',
+  //       clientSecret: 'yBn3qZURVzeS5PiiuAFY-LO6',
+  //       codeChallengeMethod: ''
+  //     },
+  //   }
+  // },
 
   build: {
     postcss: {
