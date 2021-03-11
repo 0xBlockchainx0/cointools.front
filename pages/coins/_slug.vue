@@ -3,7 +3,7 @@
     <a class="btn cursor-pointer" @click="goBack()">Back</a>
     <div class="flex items-center">
       <img :src="profile.gecko.image['small']" alt="" class="mr-5 flex-grow-0">
-        <h1 class="mb-0">{{ profile.gecko.name }}</h1>
+        <h1>{{ profile.gecko.name }}</h1>
 
     </div>
     <p>{{ profile.paprika.description }}</p>
