@@ -24,6 +24,8 @@ export default {
   ],
 
   plugins: [
+    {src:'~/plugins/VueSimpleComplete.js', ssr: false},
+    {src:'~/plugins/Autocomplete.js', ssr: false},
   ],
   devtools: true,
   components: true,
@@ -33,7 +35,7 @@ export default {
   ],
 
   modules: [
-    // '@nuxtjs/axios',
+    '@nuxtjs/axios',
     // '@nuxtjs/auth-next'
   ],
 
