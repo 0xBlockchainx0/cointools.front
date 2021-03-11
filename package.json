@@ -16,6 +16,7 @@
     "dotenv": "^8.2.0",
     "nuxt": "^2.14.12",
     "vue-bootstrap-typeahead": "^0.2.6",
+    "vue-json-pretty": "^1.6.3",
     "vue-metamask": "^2.0.3",
     "vue-simple-complete": "^1.2.0",
     "vuex": "^3.6.2",

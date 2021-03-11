@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import { $coins } from '~/constants/endpoints';
 export default {
   data() {
     return {
@@ -30,7 +31,7 @@ export default {
     }
   },
   async fetch() {
-    this.items = await fetch('https://api.cointools.app/api/coins').then(res => res.json())
+    this.items = await fetch($coins).then(res => res.json())
   }
 }
 </script>

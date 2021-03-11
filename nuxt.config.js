@@ -21,11 +21,13 @@ export default {
 
   css: [
     '~/assets/css/app.scss',
+    'vue-json-pretty/lib/styles.css'
   ],
 
   plugins: [
     {src:'~/plugins/VueSimpleComplete.js', ssr: false},
     {src:'~/plugins/Autocomplete.js', ssr: false},
+    {src:'@/plugins/vue-json-pretty', ssr: false},
   ],
   devtools: true,
   components: true,
