@@ -33,14 +33,17 @@ export default {
       }
     }
   },
+  async fetch() {
+    this.profile.paprika = await fetch($coins + '/' + this.$route.params.slug + '/paprika').then(res => res.json())
+    this.profile.gecko = await fetch($coins + '/' + this.$route.params.slug + '/gecko').then(res => res.json())
+  },
   methods: {
     goBack() {
       this.$router.go(-1);
     },
-  },
-  async fetch() {
-    this.profile.paprika = await fetch($coins + '/' + this.$route.params.slug + '/paprika').then(res => res.json())
-    this.profile.gecko = await fetch($coins + '/' + this.$route.params.slug + '/gecko').then(res => res.json())
+    refresh() {
+      this.$fetch()
+    }
   },
   computed: {
     tickerID() {
@@ -64,5 +67,8 @@ export default {
         }
     );
   },
+  mounted() {
+    this.refresh();
+  }
 }
 </script>
