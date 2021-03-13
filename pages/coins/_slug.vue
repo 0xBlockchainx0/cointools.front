@@ -47,7 +47,7 @@ export default {
       return this.profile.gecko.tickers[0].base + 'USD';
     }
   },
-  mounted() {
+  beforeMount() {
     new TradingView.widget(
         {
           "autosize": true,
