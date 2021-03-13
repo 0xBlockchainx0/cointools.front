@@ -15,7 +15,8 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     script: [
-      // { src: 'https://apis.google.com/js/platform.js', defer: true }
+      // { src: 'https://apis.google.com/js/platform.js', defer: true },
+      { src: 'https://s3.tradingview.com/tv.js' }
     ]
   },
 

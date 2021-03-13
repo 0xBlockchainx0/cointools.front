@@ -10,6 +10,19 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
+    extend: {
+      fontSize: {
+        'h1': 'var(--text-h1)',
+        'h2': 'var(--text-h2)',
+        'h3': 'var(--text-h3)',
+        'h4': 'var(--text-h4)',
+        'h5': 'var(--text-h5)',
+        'h6': 'var(--text-h6)',
+        'nav': 'var(--text-nav)',
+        'body': 'var(--text-body)',
+        'small': 'var(--text-small)',
+      },
+    },
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
@@ -44,17 +57,6 @@ module.exports = {
       'header': ['Quicksand', 'system-ui'],
       'brand': ['Inter', 'system-ui'],
       'body': ['Inter', 'system-ui'],
-    },
-    fontSize: {
-      'h1': 'var(--text-h1)',
-      'h2': 'var(--text-h2)',
-      'h3': 'var(--text-h3)',
-      'h4': 'var(--text-h4)',
-      'h5': 'var(--text-h5)',
-      'h6': 'var(--text-h6)',
-      'nav': 'var(--text-nav)',
-      'body': 'var(--text-body)',
-      'small': 'var(--text-small)',
     },
     container: {
       center: true,
