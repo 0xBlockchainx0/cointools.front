@@ -10,9 +10,8 @@
     <p>Ticker & Exchange: {{ tickerID }}</p>
     <hr class="my-10">
 
-
     <div class="tradingview-widget-container">
-      <div id="tradingview_nuxt" class="h-96"></div>
+      <div id="tradingview_nuxt" style="height:600px;"></div>
     </div>
 
 <!--        <vue-json-pretty :data="profile.paprika" deep="2"></vue-json-pretty>-->
@@ -68,6 +67,7 @@ export default {
     );
   },
   mounted() {
+    this.$fetch();
     this.refresh();
   }
 }
