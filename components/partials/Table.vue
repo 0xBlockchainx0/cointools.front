@@ -41,6 +41,7 @@
               </td>
               <td>
                 <a :href="'/coins/' + item.id" class="btn btn-primary">View</a>
+                <button @click="addToList(item.id)" class="btn">Add</button>
               </td>
             </tr>
 
@@ -59,6 +60,11 @@ export default {
   props: [
       'head',
       'body'
-  ]
+  ],
+  methods: {
+    addToList(item) {
+      this.$store.commit('localStorage/addToList', item)
+    }
+  }
 }
 </script>

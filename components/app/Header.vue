@@ -22,6 +22,7 @@ export default {
     return {
       links: [
           ['/', 'Markets'],
+          ['/monitor', 'Monitor']
           // ['/trade', 'Trade']
       ],
     }

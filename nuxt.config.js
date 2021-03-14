@@ -27,9 +27,7 @@ export default {
 
   plugins: [
     {src:'~/plugins/VueSimpleComplete.js', ssr: false},
-    {src:'~/plugins/Autocomplete.js', ssr: false},
     {src:'@/plugins/vue-json-pretty', ssr: false},
-    {src:'@/plugins/vue-search-panel', ssr: false}
   ],
   devtools: true,
   components: true,
@@ -40,6 +38,7 @@ export default {
 
   modules: [
     '@nuxtjs/axios',
+    'nuxt-vuex-localstorage',
     // '@nuxtjs/auth-next'
   ],
 
