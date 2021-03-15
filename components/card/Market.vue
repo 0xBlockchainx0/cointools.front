@@ -19,8 +19,10 @@ export default {
         }
     }
   },
-  async fetch() {
-    this.data = await fetch($coins + '/' + this.object + '/gecko').then(res => res.json())
+  mounted() {
+    this.$axios.get($coins + '/' + this.object + '/gecko').then(res => {
+      this.data = res.data
+    })
   },
   props: [
       'object'

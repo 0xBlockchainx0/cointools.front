@@ -27,5 +27,19 @@ export default {
   async fetch() {
     this.markets = await fetch($markets).then(res => res.json())
   },
+  methods: {
+    refresh() {
+      this.$fetch()
+    },
+    refresh20s() {
+      // Call fetch again if last fetch more than 30 sec ago
+        setInterval(() => {
+          this.refresh()
+        }, 20000)
+    }
+  },
+  created() {
+    this.refresh20s()
+  }
 }
 </script>

@@ -1,49 +1,39 @@
 <template>
 <div>
-  <vue-simple-complete
-      class="z-50 relative"
-      :items="items"
-      :objectMatchkey="objectMatchkey"
-      :template="template"
+  <multiselect
+      v-model="value.name"
+      label="name"
+      track-by="id"
+      :options="options"
       placeholder="Search"
-      @inputChanged="onInputChanged">
-  </vue-simple-complete>
+      :preselect-first="true"
+      :preserve-search="false"
+      @select="onSelect"
+  ></multiselect>
 </div>
 </template>
 
 <script>
 import { $coins } from '~/constants/endpoints';
 export default {
+  // async fetch() {
+  //   this.coins = await fetch($coins).then(res => res.json())
+  // },
   data() {
     return {
-      items: [],
-      objectMatchkey: "searchId",
-      template: {
-        keys: ['id'],
-        separator: ','
-      },
-      changedInput: ""
+      value: [],
+      options: []
     }
   },
   methods: {
-    onInputChanged(value) {
-      this.changedInput = value;
-      console.log('changed to' + value)
-      // if(value.length > 2) {
-      //   this.$router.push('/coins/' + value)
-      // }
+    onSelect(option, id) {
+      this.$router.push('/coins/' + option.id)
     }
   },
-  async fetch() {
-    this.items = await fetch($coins).then(res => res.json())
+  mounted() {
+    this.$axios.get($coins).then(response => {
+      this.options = response.data
+    })
   }
 }
 </script>
-
-<style lang="scss">
-.sc__container {
-  input {
-    @apply border rounded p-2 bg-white w-64;
-  }
-}
-</style>

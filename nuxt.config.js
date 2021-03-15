@@ -22,11 +22,12 @@ export default {
 
   css: [
     '~/assets/css/app.scss',
-    'vue-json-pretty/lib/styles.css'
+    'vue-json-pretty/lib/styles.css',
+    'vue-multiselect/dist/vue-multiselect.min.css'
   ],
 
   plugins: [
-    {src:'~/plugins/VueSimpleComplete.js', ssr: false},
+    {src:'~/plugins/Multiselect.js', ssr: false},
     {src:'@/plugins/vue-json-pretty', ssr: false},
   ],
   devtools: true,
