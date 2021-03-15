@@ -12,8 +12,8 @@ export const mutations = {
     }
   },
   deleteFromList(state, item) {
-    const itemFind = state.list.findIndex(result => result == item)
-    console.log(itemFind)
-    state.list.splice(item, 1)
+    const itemFind = state.list.indexOf(item)
+    const removedItem = state.list.splice(itemFind, 1)
+    console.log(removedItem)
   }
 };

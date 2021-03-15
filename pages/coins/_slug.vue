@@ -2,12 +2,14 @@
   <div class="container py-10">
     <nuxt-link class="btn cursor-pointer" to="/">Back</nuxt-link>
     <div class="flex items-center">
-      <img :src="profile.gecko.image['small']" alt="" class="mr-5 flex-grow-0">
+      <img :src="profile.gecko.image.small" alt="" class="mr-5 flex-grow-0">
         <h1>{{ profile.gecko.name }}</h1>
+
 
     </div>
     <p>{{ profile.paprika.description }}</p>
     <p>Ticker & Exchange: {{ tickerID }}</p>
+
     <hr class="my-10">
 
     <div class="tradingview-widget-container">
@@ -27,7 +29,11 @@ export default {
   data() {
     return {
       profile: {
-        gecko: [],
+        gecko: {
+          image: [],
+          tickers: {
+          }
+        },
         paprika: []
       }
     }
@@ -36,39 +42,41 @@ export default {
     this.profile.paprika = await fetch($coins + '/' + this.$route.params.slug + '/paprika').then(res => res.json())
     this.profile.gecko = await fetch($coins + '/' + this.$route.params.slug + '/gecko').then(res => res.json())
   },
+  computed: {
+    tickerID() {
+      if(this.profile.gecko.tickers[0]) {
+        return this.profile.gecko.tickers[0].base + 'USD'
+      }
+    },
+  },
   methods: {
     goBack() {
       this.$router.go(-1);
     },
     refresh() {
       this.$fetch()
-    }
-  },
-  computed: {
-    tickerID() {
-      return this.profile.gecko.tickers[0].base + 'USD';
-    }
-  },
-  beforeMount() {
-    new TradingView.widget(
-        {
-          "autosize": true,
-          "symbol": this.tickerID,
-          "interval": "D",
-          "timezone": "Etc/UTC",
-          "theme": "light",
-          "style": "1",
-          "locale": "uk",
-          "toolbar_bg": "#f1f3f6",
-          "enable_publishing": false,
-          "allow_symbol_change": true,
-          "container_id": "tradingview_nuxt"
-        }
-    );
+    },
+    async loadTradingView(tickerID) {
+      await fetch($coins + '/' + this.$route.params.slug + '/gecko').then(res => res.json())
+      new TradingView.widget(
+          {
+            "autosize": true,
+            "symbol": tickerID,
+            "interval": "D",
+            "timezone": "Etc/UTC",
+            "theme": "light",
+            "style": "1",
+            "locale": "uk",
+            "toolbar_bg": "#f1f3f6",
+            "enable_publishing": false,
+            "allow_symbol_change": true,
+            "container_id": "tradingview_nuxt"
+          }
+      );
+    },
   },
   mounted() {
-    this.$fetch();
-    this.refresh();
-  }
+    this.loadTradingView(this.tickerID)
+  },
 }
 </script>

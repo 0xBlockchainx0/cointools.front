@@ -1,5 +1,8 @@
 <template>
-  <div class="container-lg py-20 text-center">
+  <div class="container py-10">
+    <!-- This example requires Tailwind CSS v2.0+ -->
+    <PartialsTopStats class="mb-10"></PartialsTopStats>
+
     <PartialsTable :head="['Coin', 'Price', '1h', '24h', '7d', '24h Volume', 'Mkt Cap', 'Link']"
                     :body="markets"
     ></PartialsTable>

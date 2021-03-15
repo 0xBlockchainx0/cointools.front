@@ -1,10 +1,11 @@
 <template>
 <div>
   <vue-simple-complete
+      class="z-50 relative"
       :items="items"
       :objectMatchkey="objectMatchkey"
       :template="template"
-      placeholder="hey"
+      placeholder="Search"
       @inputChanged="onInputChanged">
   </vue-simple-complete>
 </div>
@@ -18,7 +19,7 @@ export default {
       items: [],
       objectMatchkey: "searchId",
       template: {
-        keys: ['name'],
+        keys: ['id'],
         separator: ','
       },
       changedInput: ""
@@ -28,6 +29,9 @@ export default {
     onInputChanged(value) {
       this.changedInput = value;
       console.log('changed to' + value)
+      // if(value.length > 2) {
+      //   this.$router.push('/coins/' + value)
+      // }
     }
   },
   async fetch() {

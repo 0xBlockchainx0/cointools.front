@@ -2,7 +2,7 @@
   <div class="min-h-screen">
     <AppHeader />
 
-    <Nuxt />
+    <Nuxt keep-alive :keep-alive-props="{ max: 50 }" />
   </div>
 </template>
 

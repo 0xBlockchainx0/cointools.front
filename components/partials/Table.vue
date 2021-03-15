@@ -40,8 +40,9 @@
                 {{ item.market_cap }}
               </td>
               <td>
-                <a :href="'/coins/' + item.id" class="btn btn-primary">View</a>
-                <button @click="addToList(item.id)" class="btn">Add</button>
+                <nuxt-link :to="'/coins/' + item.id" class="btn btn-primary">View</nuxt-link>
+                <button v-if="coinIsAdded(item.id)" @click="addToList(item.id)" class="btn">Add</button>
+                <button v-else class="button border-0 text-primary ml-3">Added!</button>
               </td>
             </tr>
 
@@ -61,7 +62,13 @@ export default {
       'head',
       'body'
   ],
+  computed: {
+  },
   methods: {
+    coinIsAdded(id) {
+      // console.log(id)
+      return this.$store.state.localStorage.list.indexOf(id) < 0;
+    },
     addToList(item) {
       this.$store.commit('localStorage/addToList', item)
     }

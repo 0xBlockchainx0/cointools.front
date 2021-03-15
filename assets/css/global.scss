@@ -19,7 +19,7 @@ body {
   @apply mx-auto;
 }
 .container {
-  $containerWidth: 1150px;
+  $containerWidth: 1350px;
   max-width:$containerWidth;
   width:100%;
   @extend %devicePadding;
