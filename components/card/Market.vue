@@ -8,10 +8,10 @@
       <button class="btn" @click="deleteFromList(object)">Remove</button>
     </div>
 
-    <div v-if="variant === 'top'" class="px-3 flex items-center">
-      <h6 class="mb-0">{{ data.name }}</h6>
+    <nuxt-link :to="'/coins/' + data.id" v-if="variant === 'top'" class="px-3 flex items-center">
+      <h6 class="mb-0">{{ data.symbol.toUpperCase() }}</h6>
       <p class="ml-4">${{ data.cointools.market_price_usd }}</p>
-    </div>
+    </nuxt-link>
 
   </div>
 </template>
@@ -26,6 +26,7 @@ export default {
   data() {
     return {
       data: {
+        symbol: [],
         cointools: []
       }
     }
