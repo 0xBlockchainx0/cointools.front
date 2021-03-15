@@ -1,10 +1,19 @@
 <template>
-  <div class="border rounded p-10">
+  <div>
+  <div v-if="!variant" class="border rounded p-10">
     <h4>{{data.name}}</h4>
     <p>${{ data.cointools.market_price_usd }}</p>
     <hr class="my-10">
     <nuxt-link :to="'/coins/'+data.id" class="btn btn-primary">View</nuxt-link>
     <button @click="deleteFromList(object)" class="btn">Remove</button>
+  </div>
+
+    <div v-if="variant === 'top'" class="border rounded p-3">
+        <h6 class="mb-0">{{data.name}}</h6>
+        <p>${{ data.cointools.market_price_usd }}</p>
+      <button @click="deleteFromList(object)" class="btn sm">Remove</button>
+    </div>
+
   </div>
 </template>
 
@@ -25,7 +34,8 @@ export default {
     })
   },
   props: [
-      'object'
+      'object',
+      'variant'
   ],
   computed: {
 

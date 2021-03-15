@@ -1,8 +1,11 @@
 <template>
   <div class="container py-10">
-    <!-- This example requires Tailwind CSS v2.0+ -->
+
+    <PartialsTrendingTicker class="mb-10"></PartialsTrendingTicker>
+
     <PartialsTopStats class="mb-10"></PartialsTopStats>
 
+    <h3>Top 100 Cryptos</h3>
     <PartialsTable :head="['Coin', 'Price', '1h', '24h', '7d', '24h Volume', 'Mkt Cap', 'Link']"
                     :body="markets"
     ></PartialsTable>
