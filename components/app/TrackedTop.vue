@@ -1,10 +1,22 @@
 <template>
-  <div v-show="tracking.length > 0" class="sticky top-0 border-r h-screen z-10 bg-white overflow-y-auto">
-    <div class="p-4">
-        <card-market variant="top" v-for="item in tracking" :key="item" :object="item"></card-market>
-    </div>
+  <div v-show="tracking.length > 0" class="sticky top-0 border-b z-10 bg-white">
+
+        <div class="container py-2 flex overflow-x-auto trackedTop">
+          <card-market variant="top" v-for="item in tracking" :key="item" :object="item"></card-market>
+        </div>
+
   </div>
 </template>
+
+<style lang="scss">
+.trackedTop {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+</style>
 
 <script>
 export default {

@@ -3,12 +3,13 @@
     <div class="container flex items-center">
       <Logo />
       <ul class="m-0 p-0 ml-3 flex">
-
-        <li class="list-none font-medium mx-5" v-for="(link, index) in links" :key="index">
-          <nuxt-link exact tag="a" :to="link[0]" class="text-header" href="/">{{link[1]}}</nuxt-link>
+        <li class="list-none font-medium mx-5">
+          <nuxt-link exact tag="a" :to="links[0][0]" class="text-header" href="/">{{links[0][1]}}</nuxt-link>
+        </li>
+        <li class="list-none font-medium mx-5">
+          <nuxt-link exact tag="a" :to="links[1][0]" class="text-header" href="/">{{links[1][1]}} <span class="text-gray-400" v-if="trackerCount > 0">({{trackerCount}})</span></nuxt-link>
         </li>
       </ul>
-      <p>(Currently tracking: {{trackerCount}})</p>
       <AppSearch class="ml-auto" />
     </div>
   </nav>

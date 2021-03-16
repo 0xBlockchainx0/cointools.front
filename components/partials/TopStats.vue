@@ -15,7 +15,7 @@
     </div>
     <div class="border p-8 topstatsitem">
       <h5 class="mb-0">Market Cap %</h5>
-      <h3 class="my-0">{{stats.quick['market_cap_percentage']['btc'].toFixed(2)}}% (BTC)</h3>
+      <h3 class="my-0">{{parseFloat(stats.quick['market_cap_percentage']['btc']).toFixed(2)}}% (BTC)</h3>
     </div>
     <div class="border p-8 topstatsitem">
       <h5 class="mb-0">Market Cap Change (24hr)</h5>

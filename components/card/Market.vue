@@ -8,9 +8,9 @@
       <button class="btn" @click="deleteFromList(object)">Remove</button>
     </div>
 
-    <nuxt-link :to="'/coins/' + data.id" v-if="variant === 'top'" class="px-3 flex items-center">
-      <h6 class="mb-0">{{ data.symbol.toUpperCase() }}</h6>
-      <p class="ml-4">${{ data.cointools.market_price_usd }}</p>
+    <nuxt-link :to="'/coins/' + data.id" v-if="variant === 'top'" class="px-3 py-1 rounded-full flex items-center text-xs border mr-3">
+      <h6 class="mb-0 uppercase text-xs">{{ data.symbol }}</h6>
+      <p class="ml-2 text-xs">${{ data.cointools.market_price_usd }}</p>
     </nuxt-link>
 
   </div>

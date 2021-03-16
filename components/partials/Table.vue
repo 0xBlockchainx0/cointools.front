@@ -15,6 +15,10 @@
             <tbody class="bg-white divide-y divide-gray-100">
             <tr v-for="(item, index) in body" :index="index">
               <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 flex items-center">
+                <div class="mr-4">
+                  <button v-if="coinIsAdded(item.id)" @click="addToList(item.id)" class="fas fa-star text-gray-200"></button>
+                  <button v-else @click="deleteFromList(item.id)" class="fas fa-star text-yellow-300"></button>
+                </div>
                 <span class="mr-4">{{item.market_cap_rank}}</span>
                 <nuxt-link class="flex items-center" :to="'/coins/' + item.id">
                   <img class="h-8 mr-4" :src="item.image" alt="">
@@ -41,8 +45,6 @@
               </td>
               <td>
                 <nuxt-link :to="'/coins/' + item.id" class="btn btn-primary">View</nuxt-link>
-                <button v-if="coinIsAdded(item.id)" @click="addToList(item.id)" class="btn">Add</button>
-                <button v-else class="button border-0 text-primary ml-3">Added!</button>
               </td>
             </tr>
 
@@ -71,7 +73,10 @@ export default {
     },
     addToList(item) {
       this.$store.commit('localStorage/addToList', item)
-    }
+    },
+    deleteFromList(id) {
+      this.$store.commit('localStorage/deleteFromList', id)
+    },
   }
 }
 </script>

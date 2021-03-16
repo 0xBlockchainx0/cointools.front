@@ -16,7 +16,8 @@ export default {
     ],
     script: [
       // { src: 'https://apis.google.com/js/platform.js', defer: true },
-      { src: 'https://s3.tradingview.com/tv.js' }
+      { src: 'https://s3.tradingview.com/tv.js' },
+      { src: 'https://kit.fontawesome.com/e78acb6467.js' }
     ]
   },
 

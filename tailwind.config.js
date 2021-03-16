@@ -32,6 +32,7 @@ module.exports = {
       indigo: colors.indigo,
       red: colors.rose,
       yellow: colors.amber,
+      green: colors.emerald,
       primary: {
         DEFAULT: 'var(--color-primary)',
         'light': 'var(--color-primary-light)',
