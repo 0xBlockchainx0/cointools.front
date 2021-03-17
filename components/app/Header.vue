@@ -11,8 +11,8 @@
         </li>
       </ul>
       <div class="ml-auto">
-        <button v-if="darkMode" @click="toggleMode" class="btn mr-3">Light</button>
-        <button v-else @click="toggleMode" class="btn mr-3">Dark</button>
+        <button v-if="darkMode" @click="toggle" class="btn mr-3">Light</button>
+        <button v-else @click="toggle" class="btn mr-3">Dark</button>
       </div>
       <AppSearch />
     </div>
@@ -20,11 +20,12 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 export default {
   data() {
     return {
-      trackers: this.$store.state.localStorage.list,
-      darkMode: this.$store.state.localStorage.darkMode,
+      trackers: this.$store.state.list,
+      darkMode: this.$store.state.darkMode,
       links: [
           ['/', 'Markets'],
           ['/tracker', 'Tracker']
@@ -33,9 +34,11 @@ export default {
     }
   },
   methods: {
-    toggleMode() {
-      this.$store.commit('localStorage/toggleDarkMode')
-    }
+    ...mapMutations({
+      darkModeOff: 'darkModeOff',
+      darkModeOn: 'darkModeOn',
+      toggle: 'darkToggle'
+    })
   },
   computed: {
     trackerCount() {

@@ -33,7 +33,7 @@ export default {
       this.$router.push('/coins/' + option.id)
     },
     search(query) {
-      this.options = this.optionArray.filter(e => e.name.startsWith(query))
+      this.options = this.optionArray.filter(e => e.searchId.startsWith(query))
     }
   },
   mounted() {

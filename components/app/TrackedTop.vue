@@ -22,7 +22,7 @@
 export default {
   computed: {
     tracking() {
-      return this.$store.state.localStorage.list
+      return this.$store.state.list
     }
   }
 }

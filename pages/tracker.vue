@@ -14,7 +14,7 @@
 export default {
   computed: {
     tracking() {
-      return this.$store.state.localStorage.list
+      return this.$store.state.list
     },
     noTrackers() {
       return this.tracking.length == 0

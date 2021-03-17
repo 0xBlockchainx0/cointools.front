@@ -38,7 +38,7 @@ export default {
   computed: {},
   methods: {
     deleteFromList(id) {
-      this.$store.commit('localStorage/deleteFromList', id)
+      this.$store.commit('deleteFromList', id)
     },
     refresh() {
       this.$fetch()

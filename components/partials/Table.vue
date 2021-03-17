@@ -69,13 +69,13 @@ export default {
   methods: {
     coinIsAdded(id) {
       // console.log(id)
-      return this.$store.state.localStorage.list.indexOf(id) < 0;
+      return this.$store.state.list.indexOf(id) < 0;
     },
     addToList(item) {
-      this.$store.commit('localStorage/addToList', item)
+      this.$store.commit('addToList', item)
     },
     deleteFromList(id) {
-      this.$store.commit('localStorage/deleteFromList', id)
+      this.$store.commit('deleteFromList', id)
     },
   }
 }

@@ -30,6 +30,7 @@ export default {
   plugins: [
     {src:'~/plugins/Multiselect.js', ssr: false},
     {src:'@/plugins/vue-json-pretty', ssr: false},
+    { src: '~/plugins/vuex-persist', ssr: false }
   ],
   devtools: true,
   components: true,
@@ -40,7 +41,7 @@ export default {
 
   modules: [
     '@nuxtjs/axios',
-    'nuxt-vuex-localstorage',
+    // 'nuxt-vuex-localstorage',
     // '@nuxtjs/auth-next'
   ],
 
