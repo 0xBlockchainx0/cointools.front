@@ -1,5 +1,5 @@
 <template>
-  <div v-show="tracking.length > 0" class="sticky top-0 border-b z-10 bg-dark">
+  <div v-show="tracking.length > 0" class="sticky top-0 border-b z-10">
 
         <div class="container py-2 flex overflow-x-auto trackedTop">
           <card-market variant="top" v-for="item in tracking" :key="item" :object="item"></card-market>
