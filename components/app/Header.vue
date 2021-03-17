@@ -10,7 +10,11 @@
           <nuxt-link exact tag="a" :to="links[1][0]" class="text-header" href="/">{{links[1][1]}} <span class="text-gray-400" v-if="trackerCount > 0">({{trackerCount}})</span></nuxt-link>
         </li>
       </ul>
-      <AppSearch class="ml-auto" />
+      <div class="ml-auto">
+        <button v-if="darkMode" @click="toggleMode" class="btn mr-3">Light</button>
+        <button v-else @click="toggleMode" class="btn mr-3">Dark</button>
+      </div>
+      <AppSearch />
     </div>
   </nav>
 </template>
@@ -20,11 +24,17 @@ export default {
   data() {
     return {
       trackers: this.$store.state.localStorage.list,
+      darkMode: this.$store.state.localStorage.darkMode,
       links: [
           ['/', 'Markets'],
           ['/tracker', 'Tracker']
           // ['/trade', 'Trade']
       ],
+    }
+  },
+  methods: {
+    toggleMode() {
+      this.$store.commit('localStorage/toggleDarkMode')
     }
   },
   computed: {

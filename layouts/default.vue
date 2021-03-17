@@ -2,7 +2,7 @@
   <div class="min-h-screen">
     <div class="w-full">
       <AppHeader/>
-      <!-- <AppTrackedTop/> -->
+      <AppTrackedTop/>
       <Nuxt :keep-alive-props="{ max: 20 }" keep-alive/>
     </div>
   </div>

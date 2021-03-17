@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="!variant" class="border rounded p-10">
+    <div v-show="!variant" class="border rounded p-10">
       <h4>{{ data.name }}</h4>
       <p>${{ data.cointools.market_price_usd }}</p>
       <hr class="my-10">

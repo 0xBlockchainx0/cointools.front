@@ -1,5 +1,6 @@
 export const state = () => ({
   list: [],
+  darkMode: false
 });
 
 export const mutations = {
@@ -15,5 +16,8 @@ export const mutations = {
     const itemFind = state.list.indexOf(item)
     const removedItem = state.list.splice(itemFind, 1)
     console.log(removedItem)
+  },
+  toggleDarkMode() {
+    state.darkMode = !state.darkMode
   }
 };

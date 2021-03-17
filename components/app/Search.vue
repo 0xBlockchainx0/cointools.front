@@ -9,6 +9,8 @@
       :preselect-first="true"
       :preserve-search="false"
       @select="onSelect"
+      :internal-search="false"
+      @search-change="search"
   ></multiselect>
 </div>
 </template>
@@ -22,17 +24,21 @@ export default {
   data() {
     return {
       value: [],
+      optionArray: [],
       options: []
     }
   },
   methods: {
     onSelect(option, id) {
       this.$router.push('/coins/' + option.id)
+    },
+    search(query) {
+      this.options = this.optionArray.filter(e => e.name.startsWith(query))
     }
   },
   mounted() {
     this.$axios.get($coins).then(response => {
-      this.options = response.data
+      this.optionArray = response.data
     })
   }
 }
