@@ -28,6 +28,7 @@ export const mutations = {
     state.darkMode = true
   },
   darkToggle() {
+    console.log(state.darkMode)
     state.darkMode = !state.darkMode
   }
 };
