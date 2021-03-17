@@ -23,6 +23,12 @@ module.exports = {
         'small': 'var(--text-small)',
       },
     },
+    borderColor: theme => ({
+      ...theme('colors'),
+       DEFAULT: 'var(--color-border)',
+      'primary': 'var(--color-primary)',
+      'secondary': 'var(--color-secondary)',
+     }),
     colors: {
       transparent: 'transparent',
       current: 'currentColor',

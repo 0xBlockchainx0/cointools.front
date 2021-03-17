@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen">
+  <div class="min-h-screen bg-bg" :data-theme="dataTheme">
     <div class="w-full">
       <AppHeader/>
       <AppTrackedTop/>
@@ -9,5 +9,15 @@
 </template>
 
 <script>
-export default {}
+export default {
+  computed: {
+    darkMode() {
+      return this.$store.state.darkMode
+    },
+    dataTheme() {
+      if(this.darkMode) return 'dark'
+      else return 'light'
+    }
+  }
+}
 </script>

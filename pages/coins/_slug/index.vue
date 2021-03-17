@@ -3,7 +3,7 @@
 
     <PartialsMarketHeader />
 
-    <div class="container grid grid-cols-4 items-start gap-5 my-10">
+    <div class="container grid grid-cols-4 items-start gap-5 py-10">
       <div class="col-span-3 border rounded p-10">
         <div class="tradingview-widget-container">
           <div id="tradingview_nuxt" style="height:600px;"></div>
@@ -11,7 +11,7 @@
       </div>
       <div class="col-span-1 border rounded p-10">
         <h5>About {{profile.gecko.name}}</h5>
-        <p>{{profile.paprika.description}}</p>
+        
       </div>
     </div>
 

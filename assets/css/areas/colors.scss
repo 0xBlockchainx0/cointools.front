@@ -29,3 +29,33 @@
   --btn-disabled-bg: rgba(255,255,255,0.1);
   --btn-disabled-label: var(--color-body);
 }
+[data-theme="dark"] {
+  --color-primary: #0C5EFF;
+  --color-secondary: #653EDA;
+
+  --color-bg: #15191D; // bg
+  --color-bg-back: #2F3645;
+  --color-bg-light: #2F3645;
+  --color-bg-dark: #12161A;
+  --color-border: #242C31;
+  --color-shade: rgba(0, 0, 0, 0.1);
+  --color-transparent: transparent;
+
+  // Text colors
+  --color-header: white;
+  --color-body: #c6cfe2;
+
+  // Links
+  --color-link: var(--color-primary);
+  --color-link-hover: var(--color-primary);
+
+  // Buttons
+  --btn-primary-bg: var(--color-primary);
+  --btn-primary-hover: var(--color-primary);
+  --btn-primary-label: white;
+  --btn-primary-active: white;
+
+  --btn-disabled-bg: rgba(255,255,255,0.1);
+  --btn-disabled-label: var(--color-body);
+}
+

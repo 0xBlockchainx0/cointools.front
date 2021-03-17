@@ -54,8 +54,7 @@ export default {
           cointools: [],
           tickers: {
           }
-        },
-        paprika: []
+        }
       }
     }
   },
@@ -86,10 +85,9 @@ export default {
     }
   },
   async fetch() {
-    this.profile.paprika = await fetch($coins + '/' + this.$route.params.slug + '/paprika').then(res => res.json())
     this.profile.gecko = await fetch($coins + '/' + this.$route.params.slug + '/gecko').then(res => res.json())
   },
-  created() {
+  mounted() {
     this.refresh20s()
   }
 }

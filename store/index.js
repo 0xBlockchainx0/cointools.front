@@ -3,7 +3,7 @@ export const plugins = [new VuexPersistence().plugin];
 
 export const state = () => ({
   list: [],
-  darkMode: false
+  darkMode: true
 });
 
 
@@ -21,19 +21,7 @@ export const mutations = {
     const removedItem = state.list.splice(itemFind, 1)
     console.log(removedItem)
   },
-  darkModeOff() {
-    state.darkMode = false
-  },
-  darkModeOn() {
-    state.darkMode = true
-  },
-  darkToggle() {
-    console.log(state.darkMode)
+  darkToggle(state) {
     state.darkMode = !state.darkMode
   }
 };
-
-export const getters = {
-  list: state => state.list,
-  darkMode: state => state.darkMode
-}

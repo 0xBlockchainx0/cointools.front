@@ -21,7 +21,9 @@ import {$coins} from '~/constants/endpoints';
 
 export default {
   async fetch() {
+    if(this.object) {
     this.data = await fetch($coins + '/' + this.object + '/gecko').then(res => res.json())
+    }
   },
   data() {
     return {
@@ -42,7 +44,6 @@ export default {
     },
     refresh() {
       this.$fetch()
-      console.log('refetching')
     },
     refresh20s() {
       // Call fetch again if last fetch more than 30 sec ago

@@ -1,5 +1,5 @@
 <template>
-  <nav class="w-full border-b py-4 top-0 z-50 bg-white">
+  <nav class="w-full border-b py-4 top-0 z-50 bg-bg">
     <div class="container flex items-center">
       <Logo />
       <ul class="m-0 p-0 ml-3 flex">
@@ -25,7 +25,6 @@ export default {
   data() {
     return {
       trackers: this.$store.state.list,
-      darkMode: this.$store.state.darkMode,
       links: [
           ['/', 'Markets'],
           ['/tracker', 'Tracker']
@@ -35,14 +34,15 @@ export default {
   },
   methods: {
     ...mapMutations({
-      darkModeOff: 'darkModeOff',
-      darkModeOn: 'darkModeOn',
       toggle: 'darkToggle'
     })
   },
   computed: {
     trackerCount() {
       return this.trackers.length
+    },
+    darkMode() {
+      return this.$store.state.darkMode
     }
   }
 }
