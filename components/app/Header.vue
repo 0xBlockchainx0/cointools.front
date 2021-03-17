@@ -1,5 +1,5 @@
 <template>
-  <nav class="w-full border-b py-4 top-0 z-50 bg-bg">
+  <nav class="w-full border-b py-4 top-0 z-50 bg">
     <div class="container flex items-center">
       <Logo />
       <ul class="m-0 p-0 ml-3 flex">
