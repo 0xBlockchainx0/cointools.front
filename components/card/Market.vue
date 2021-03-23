@@ -13,9 +13,11 @@
       <p class="ml-2 text-xs">${{ data.cointools.market_price_usd }}</p>
     </nuxt-link>
 
-     <nuxt-link :to="'/coins/' + data.id" v-if="variant === 'left'" class="flex items-center w-full px-3 py-2 mb-2 mr-3 text-xs border rounded-full">
+     <nuxt-link :to="'/coins/' + data.id" v-if="variant === 'left'" class="flex items-center w-full py-2 mb-2 mr-3 text-xs">
+     <div class="mr-2 bg-white rounded-full">
+     <img :src="data.image.small" alt="" class="flex-grow-0 w-4"></div>
       <h6 class="mb-0 text-xs uppercase">{{ data.symbol }}</h6>
-      <p class="ml-2 text-xs">${{ data.cointools.market_price_usd }}</p>
+      <p class="ml-auto\ text-xs">${{ data.cointools.market_price_usd }}</p>
     </nuxt-link>
 
   </div>
@@ -34,6 +36,7 @@ export default {
     return {
       data: {
         symbol: [],
+        image: [],
         cointools: []
       }
     }
