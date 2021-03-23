@@ -6,10 +6,10 @@
     <PartialsTopStats class="mb-10"></PartialsTopStats>
 
     <h3>Top 100 Cryptos</h3>
-    <PartialsTable :head="['Coin', 'Price', '1h', '24h', '7d', '24h Volume', 'Mkt Cap', 'Link']"
+    <PartialsTable :head="['Coin', 'Price', '1h', '24h', '7d', '24h Volume', 'Mkt Cap']"
                     :body="markets"
     ></PartialsTable>
-<!--    <div v-for="(coin, index) in markets" :key="index" class="text-left border rounded p-5 mb-2 flex items-center justify-between">-->
+<!--    <div v-for="(coin, index) in markets" :key="index" class="flex items-center justify-between p-5 mb-2 text-left border rounded">-->
 <!--      <div>-->
 <!--        <h5 class="mb-0">{{index + 1}}. {{coin['name']}}</h5>-->
 <!--        <p>${{coin['symbol']}}</p>-->

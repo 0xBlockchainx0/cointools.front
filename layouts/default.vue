@@ -1,8 +1,9 @@
 <template>
-  <div class="min-h-screen bg-bg" :data-theme="dataTheme">
+  <div class="flex w-full min-h-screen bg-bg" :data-theme="dataTheme">
+  <AppSidebar />
+    <AppSideTracker />
     <div class="w-full">
       <AppHeader/>
-      <AppTrackedTop/>
       <Nuxt :keep-alive-props="{ max: 20 }" keep-alive/>
     </div>
   </div>

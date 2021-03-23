@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-show="!variant" class="border rounded p-10">
+    <div v-show="!variant" class="p-10 border rounded">
       <h4>{{ data.name }}</h4>
       <p>${{ data.cointools.market_price_usd }}</p>
       <hr class="my-10">
@@ -8,8 +8,13 @@
       <button class="btn" @click="deleteFromList(object)">Remove</button>
     </div>
 
-    <nuxt-link :to="'/coins/' + data.id" v-if="variant === 'top'" class="px-3 py-1 rounded-full flex items-center text-xs border mr-3">
-      <h6 class="mb-0 uppercase text-xs">{{ data.symbol }}</h6>
+    <nuxt-link :to="'/coins/' + data.id" v-if="variant === 'top'" class="flex items-center px-3 py-1 mr-3 text-xs border rounded-full">
+      <h6 class="mb-0 text-xs uppercase">{{ data.symbol }}</h6>
+      <p class="ml-2 text-xs">${{ data.cointools.market_price_usd }}</p>
+    </nuxt-link>
+
+     <nuxt-link :to="'/coins/' + data.id" v-if="variant === 'left'" class="flex items-center w-full px-3 py-2 mb-2 mr-3 text-xs border rounded-full">
+      <h6 class="mb-0 text-xs uppercase">{{ data.symbol }}</h6>
       <p class="ml-2 text-xs">${{ data.cointools.market_price_usd }}</p>
     </nuxt-link>
 
@@ -21,7 +26,7 @@ import {$coins} from '~/constants/endpoints';
 
 export default {
   async fetch() {
-    if(this.object) {
+    if(this.object && this.object != undefined) {
     this.data = await fetch($coins + '/' + this.object + '/gecko').then(res => res.json())
     }
   },

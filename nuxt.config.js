@@ -30,7 +30,10 @@ export default {
   plugins: [
     {src:'~/plugins/Multiselect.js', ssr: false},
     {src:'@/plugins/vue-json-pretty', ssr: false},
-    { src: '~/plugins/vuex-persist', ssr: false }
+    { src: '~/plugins/vuex-persist', ssr: false },
+    // { src: '~/plugins/trading-vue', ssr: false },
+    //{ src:'~/plugins/firebase.js', ssr: false},
+    //{ src:'~/plugins/fireauth.js', ssr: false}
   ],
   devtools: true,
   components: true,
@@ -41,6 +44,7 @@ export default {
 
   modules: [
     '@nuxtjs/axios',
+    // '@nuxtjs/firebase'
     // 'nuxt-vuex-localstorage',
     // '@nuxtjs/auth-next'
   ],
